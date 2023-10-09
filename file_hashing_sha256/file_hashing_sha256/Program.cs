@@ -1,9 +1,11 @@
 ﻿using System.Text;
 using file_hashing_sha256;
 
+Console.WriteLine("Input file name: ");
 var fileName = Console.ReadLine();
 int segmentsCount;
 
+Console.WriteLine("Input segments number: ");
 if (!int.TryParse(Console.ReadLine(), out segmentsCount))
 {
     throw new ArgumentException("Invalid number of segments!");
@@ -15,6 +17,15 @@ if (fileName == null)
 }
 
 var fileInfo = new FileInfo(fileName);
+
+
+while (!fileInfo.Exists) 
+{
+    Console.WriteLine("File doesn't exist!");
+    Console.WriteLine("Input file name: ");
+    fileName = Console.ReadLine();
+    fileInfo = new FileInfo(fileName);
+}
 
 if (fileInfo.Length < segmentsCount)
 {
