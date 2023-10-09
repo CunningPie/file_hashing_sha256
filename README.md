@@ -1,2 +1,2 @@
 # file_hashing_sha256
-This console app splits file for specified number of segments and hashes each by sha256 algorithm
+В данном проекте было реализовано хеширование сегментов файла с помощью алгоритма SHA256 с реализацией многопоточности. 
